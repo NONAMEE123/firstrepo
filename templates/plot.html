@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Visualization App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a  class="navbar-brand" href="/acc" style="font-size: x-large;" >DataVis</a>
+          </div>
+          
+          
+          <ul class="nav navbar-nav">
+            <li class="active"><a class="glyphicon glyphicon-home" href="/acc" style="font-size: large;"> Home </a></li>
+            <li><a class="glyphicon glyphicon-save-file " href="/acc1" style="font-size: large;"> Export Html</a></li>
+            <li><a class="glyphicon glyphicon-save-file" href="/acc2" style="font-size: large;"> Export JSON</a></li>
+            <li><a class="glyphicon glyphicon-folder-close" href="/dataframecss" style="font-size: large;"> Data</a></li>
+            <li><a class="glyphicon glyphicon-stats" href="/graphes" style="font-size: large;"> Charts</a></li>
+            <li><a class="glyphicon glyphicon-stats" href="/plot" style="font-size: large;"> Plottly</a></li>
+           
+
+
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group" style="margin-left:250px;">
+                <input type="text" class="form-control" placeholder="Search" style="font-size: large;">
+              </div>
+              <button type="button" class="btn btn-primary">
+                <span class="glyphicon glyphicon-search"></span> Search
+              </button>
+      
+                  </form>
+
+            
+           
+          </ul>
+
+
+
+
+        </div>
+      </nav>
+
+
+
+      <h2>Load Your File Now</h2>
+
+
+      <div>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="myfile" class="btn btn-lg btn-primary">
+        <input list="browsers" name="browser">
+        <datalist id="browsers">
+            {% for val in res %}
+            <option>
+            {{ val }}
+            </option>
+            {% endfor%}
+        </datalist>
+       
+        <input list="browsers" name="browser">
+        <datalist id="browsers">
+          {% for val in res %}
+          <option>
+          {{ val }}
+          </option>
+          {% endfor%}
+      </datalist>
+       
+        <button type="submit" class="btn btn-primary mb-2">Plot</button>
+      </form>
+    </div>

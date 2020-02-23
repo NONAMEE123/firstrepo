@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>Graphes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 
+
+</head>
+<body >
+
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a  class="navbar-brand" href="/acc" style="font-size: x-large;" >DataVis</a>
+      </div>
+      
+      <ul class="nav navbar-nav">
+        <li class="active"><a class="glyphicon glyphicon-home" href="/acc" style="font-size: large;"> Home </a></li>
+        <li><a class="glyphicon glyphicon-save-file " href="/acc1" style="font-size: large;"> Export Html</a></li>
+        <li><a class="glyphicon glyphicon-save-file" href="/acc2" style="font-size: large;"> Export JSON</a></li>
+        <li><a class="glyphicon glyphicon-folder-close" href="/dataframecss" style="font-size: large;"> Data</a></li>
+        <li><a class="glyphicon glyphicon-stats" href="/graphes" style="font-size: large;"> Charts</a></li>
+      
+        
+       
+      </ul>
+    </div>
+  </nav>
+
+   
+
+    <center><h1 style="margin-top: 80px; font-size: xxx-large;"> <b>charts </b></h1> </center>
+    <br>
+    <br>
+
+
+    <div>
+      
+      <div class="zoom">
+      <img src="{% static 'images/cinq.JPG' %}"/>
+      <form  action="{% url 'detail_1' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <button type="submit" class="btn btn-primary" style="margin-left: 290px; margin-bottom: 25px;">
+          <span class="glyphicon glyphicon-pencil"></span> Details
+        </button>
+      </form>
+      <form  action="{% url 'images_1' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-warning  " onclick="myFunction()" style="margin-left: 270px;">
+          <span class="glyphicon glyphicon-floppy-save"></span> Save AS PDF
+        </button>
+              <br>
+      </form>
+      
+
+        <img src= "{% static 'images/deux.JPG' %}  " style="margin-top: -735px; margin-left: 680px;"/>
+        <br>
+        <form action="{% url 'detail_2' %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-primary" style="margin-left: 990px; margin-top: -230px;">
+            <span class="glyphicon glyphicon-pencil"></span> Details
+          </button>        </form>
+        <form action="{% url 'images_2' %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+      <br>
+      <button type="submit" class="btn btn-warning  " onclick="myFunction()" style="margin-left: 974px; margin-top:-197px;">
+        <span class="glyphicon glyphicon-floppy-save"></span> Save AS PDF
+      </button>
+              <br>
+        </form>
+        
+        <img src= "{% static 'images/trois.JPG' %}" style="margin-left: 688px;"/>
+        <img src= "{% static 'images/quatre.JPG' %}" style="margin-right: 700px; margin-top: -480px;"/>
+        <form  action="{% url 'detail_3' %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-primary" style="margin-left: 270px;">
+            <span class="glyphicon glyphicon-pencil"></span> Details
+          </button>        </form>
+          <form  action="{% url 'images_3' %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+      <br>
+      <button type="submit" class="btn btn-warning  " onclick="myFunction()" style="margin-left: 250px;">
+        <span class="glyphicon glyphicon-floppy-save"></span> Save AS PDF
+      </button>      </form>
+      <form action="{% url 'detail_4' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <button type="submit" class="btn btn-primary" style="margin-left: 990px; margin-top:-180px;">
+          <span class="glyphicon glyphicon-pencil"></span> Details
+        </button>      </form>
+      <form action="{% url 'images_4' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-warning  " onclick="myFunction()" style="margin-left: 970px; margin-top: -100px;">
+          <span class="glyphicon glyphicon-floppy-save"></span> Save AS PDF
+        </button>
+        </form>
+ 
+        </div>  
+
+        <div style="padding-left: 520px; padding-top: 50px;">
+          <form  action="{% url 'images_5' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary" onclick="myFunction()" style="font-size: xxx-large;">
+              <span class="glyphicon glyphicon-floppy-save"></span> SAVE A PDF
+            </button>          
+          </form>
+        </div>
+        
+      </div>
+    
+
+
+    
+
+    <hr class="featurette-divider">
+  
+    
+</body>
+
+<br>
+<br>
+
+<footer>
+
+  {% include "footer.html" %}
+    
+</footer>
+
+<script>
+  function myFunction() {
+    if ( confirm( "You Really want to save it as A PDF" ) ) {
+    // Code à éxécuter si le l'utilisateur clique sur "OK"
+} else {
+    // Code à éxécuter si l'utilisateur clique sur "Annuler" 
+}
+  }
+  </script>
+</html>

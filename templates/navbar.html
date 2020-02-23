@@ -1,0 +1,44 @@
+{% load static %}
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+<main role="main" class="container">
+    <div class="jumbotron">
+        <br>
+      <h1>About us</h1>
+      <p class="lead">we  offer you a simple service of visualization with differents types of charts. </p>
+      <h2>Load Your File Now</h2>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="myfile" class="btn btn-lg btn-primary">
+        <br>
+        <button type="submit" class="btn btn-success" onclick="f1()">
+          <span class="glyphicon glyphicon-ok"></span> UPLOAD
+        </button>
+        <button type="button" class="btn btn-default">
+          <span class="glyphicon glyphicon-save-file"></span> Export to HTML
+        </button>
+        <button type="button" class="btn btn-info">
+          <span class="glyphicon glyphicon-save-file"></span> Export to JSON
+        </button>
+        <button type="reset" class="btn btn-danger">
+          <span class="glyphicon glyphicon-remove"></span> Reset
+        </button>
+      </form>
+
+     
+    </div>
+
+    <script>
+    function f1(){
+    alert('Data upload Success')
+     }
+      </script>
+  </main>
+  </html>
+  

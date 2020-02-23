@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Data Frame</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 
+
+</head>
+<body>
+
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a  class="navbar-brand" href="/acc" style="font-size: x-large;" >DataVis</a>
+      </div>
+      
+      <ul class="nav navbar-nav">
+        <li class="active"><a class="glyphicon glyphicon-home" href="/acc" style="font-size: large;"> Home </a></li>
+        <li><a class="glyphicon glyphicon-save-file " href="/acc1" style="font-size: large;"> Export Html</a></li>
+        <li><a class="glyphicon glyphicon-save-file" href="/acc2" style="font-size: large;"> Export JSON</a></li>
+        <li><a class="glyphicon glyphicon-folder-close" href="/dataframecss" style="font-size: large;"> Data</a></li>
+        <li><a class="glyphicon glyphicon-stats" href="/graphes" style="font-size: large;"> Charts</a></li>
+      
+        
+       
+      </ul>
+    </div>
+  </nav>
+
+   
+
+    <center><h1 style="font-size: xxx-large; margin-top: 50px;"><b>Data Frame</b></h1></center>
+    <br>
+    <br>
+
+     
+    <div class="row" style="position: sticky;">
+      <center>
+        <div class="col-sm-4" style="display: inline-block;
+        position: relative;
+        width: 100%;
+        background-size: contain;"><b style="font-size: x-large;">All data</b>{% include "indexxx.html"%} 
+        
+      </div>
+    </center>
+    <center>
+        <div class="col-sm-4" style="display: inline-block;
+        position: relative;
+        width: 100%;
+        background-size: contain; "><b style="font-size: x-large;">Head</b> {% include "head_df.html"%} 
+        
+      </div>
+    </center>
+        <center>
+        <div class="col-sm-4" style="display: inline-block;
+        position: relative;
+        width: 100%;
+        background-size: contain; "><b style="font-size: x-large;">Tail</b> {% include "tail_df.html" %}
+        </div>
+      </center>
+      <center>
+        <div class="col-sm-4" style="display: inline-block;
+        position: relative;
+        width: 100%;
+        background-size: contain; " ><b style="font-size: x-large;">Statics </b>{% include "static.html" %}
+        </div>
+      </center>
+      <center>
+        <div  class="col-sm-4" style="display: inline-block;
+        position: relative;
+        width: 100%;
+        background-size: contain; " ><b style="font-size: x-large;">CumSum</b> {% include "cumsum.html" %}
+        
+      </div>
+    </center>
+        <center>
+        <div class="col-sm-4"style="display: inline-block;
+        position: relative;
+        width: 100%;
+        background-size: contain; "><b style="font-size: x-large;">Rank </b>{% include "rank.html" %}
+        
+      </div>
+    </center>
+    <center>
+        <div class="col-sm-4" style="display: inline-block;
+        position: relative;
+        width: 100%;
+        background-size: contain; " ><b style="font-size: x-large;">Pourcentage Column </b>{% include "pourl.html" %}
+        
+      </div>
+    </center>
+    <center>
+        <div class="col-sm-4" style="display: inline-block;
+        position: relative;
+        width: 100%;
+        background-size: contain; " ><b style="font-size: x-large;">Pourcentage row</b> {% include "pourc.html" %}
+        
+      </div>
+    </center>
+       <center>
+        <div class="col-sm-4" style="display: inline-block;
+        position: relative;
+        width: 100%;
+        background-size: contain; " ><b style="font-size: x-large;">Transpose </b>{% include "trans.html" %}
+        </div>        
+      </center>
+        <!----
+        <div class="col-sm-4" style="margin-left: 140px;margin-top: 290px; margin-left: 30px;" >{% include "trans.html" %}</div>
+-->
+
+      </div>
+
+      <div style="padding-left: 520px; padding-top: 50px;">
+          
+        <button onclick="myFunction()" class="btn btn-primary" style="font-size: xxx-large;">SAVE A PDF</button>
+      </div>
+      
+    </div>
+    
+
+
+    
+
+    <hr class="featurette-divider">
+  
+    
+</body>
+
+<br>
+<br>
+
+<footer>
+
+  {% include "footer.html" %}
+    
+</footer>
+
+<script>
+  function myFunction() {
+    window.print();
+  }
+  </script>
+</html>
